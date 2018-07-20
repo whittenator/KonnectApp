@@ -1,0 +1,235 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AWSAutoScaling (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSCloudWatch (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSCognito (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSCognitoIdentityProvider (2.6.22):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.22)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.22)
+  - AWSDynamoDB (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSEC2 (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSElasticLoadBalancing (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSIoT (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSKinesis (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSLambda (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSMachineLearning (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSMobileAnalytics (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSS3 (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSSES (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSSimpleDB (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSSNS (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSSQS (2.6.22):
+    - AWSCore (= 2.6.22)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - Braintree (4.16.0):
+    - Braintree/Card (= 4.16.0)
+    - Braintree/Core (= 4.16.0)
+    - Braintree/PayPal (= 4.16.0)
+    - Braintree/UI (= 4.16.0)
+  - Braintree/Card (4.16.0):
+    - Braintree/Core
+  - Braintree/Core (4.16.0)
+  - Braintree/PaymentFlow (4.16.0):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/PayPal (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.16.0)
+  - Braintree/UI (4.16.0):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/UnionPay (4.16.0):
+    - Braintree/Card
+    - Braintree/Core
+  - BraintreeDropIn (6.2.0):
+    - BraintreeDropIn/DropIn (= 6.2.0)
+  - BraintreeDropIn/DropIn (6.2.0):
+    - Braintree/Card (~> 4.11)
+    - Braintree/Core (~> 4.11)
+    - Braintree/PaymentFlow (~> 4.11)
+    - Braintree/UnionPay (~> 4.11)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (6.2.0)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
+  - Facebook-iOS-SDK (4.34.0):
+    - Bolts (~> 1.7)
+    - Facebook-iOS-SDK/CoreKit (= 4.34.0)
+    - Facebook-iOS-SDK/LoginKit (= 4.34.0)
+    - Facebook-iOS-SDK/MarketingKit (= 4.34.0)
+    - Facebook-iOS-SDK/PlacesKit (= 4.34.0)
+    - Facebook-iOS-SDK/ShareKit (= 4.34.0)
+    - Facebook-iOS-SDK/TVOSKit (= 4.34.0)
+  - Facebook-iOS-SDK/CoreKit (4.34.0):
+    - Bolts (~> 1.7)
+  - Facebook-iOS-SDK/LoginKit (4.34.0):
+    - Bolts (~> 1.7)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/MarketingKit (4.34.0):
+    - Bolts (~> 1.7)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/PlacesKit (4.34.0):
+    - Bolts (~> 1.7)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/ShareKit (4.34.0):
+    - Bolts (~> 1.7)
+    - Facebook-iOS-SDK/CoreKit
+  - GJPG (1.6.4):
+    - AFNetworking
+    - PushSpring/Framework
+  - HPGrowingTextView (1.1)
+  - LGSideMenuController (2.1.1)
+  - LLSimpleCamera (5.0.0)
+  - PushSpring/Framework (4.0.6)
+  - Reachability (3.2)
+  - SlideMenuControllerOC (1.0.2)
+
+DEPENDENCIES:
+  - AWSAutoScaling
+  - AWSCloudWatch
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSElasticLoadBalancing
+  - AWSIoT
+  - AWSKinesis
+  - AWSLambda
+  - AWSMachineLearning
+  - AWSMobileAnalytics
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+  - AWSSQS
+  - Braintree
+  - BraintreeDropIn
+  - Crashlytics
+  - Fabric
+  - Facebook-iOS-SDK
+  - GJPG (= 1.6.4)
+  - HPGrowingTextView
+  - LGSideMenuController
+  - LLSimpleCamera
+  - Reachability
+  - SlideMenuControllerOC
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AWSAutoScaling
+    - AWSCloudWatch
+    - AWSCognito
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSDynamoDB
+    - AWSEC2
+    - AWSElasticLoadBalancing
+    - AWSIoT
+    - AWSKinesis
+    - AWSLambda
+    - AWSMachineLearning
+    - AWSMobileAnalytics
+    - AWSS3
+    - AWSSES
+    - AWSSimpleDB
+    - AWSSNS
+    - AWSSQS
+    - Bolts
+    - Braintree
+    - BraintreeDropIn
+    - Crashlytics
+    - Fabric
+    - Facebook-iOS-SDK
+    - GJPG
+    - HPGrowingTextView
+    - LGSideMenuController
+    - LLSimpleCamera
+    - PushSpring
+    - Reachability
+    - SlideMenuControllerOC
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AWSAutoScaling: 980b633cc75afefc76feb2d40924e7a6fa7f2e4f
+  AWSCloudWatch: 408625b63a520975eaa9b31c976a61574f7a3671
+  AWSCognito: e8d697e797166cb1b813d12c08765ff26daf19ac
+  AWSCognitoIdentityProvider: f7d15744ca3d70270de05a212e501f29a4a06307
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: faae134779f0f6e46a8d426c0ccc02e34466b785
+  AWSDynamoDB: b2f5b6a98d40f875e89a974d56b62c418e872972
+  AWSEC2: 17e10f74507a0f62da20f4c9b1d361db33bd8624
+  AWSElasticLoadBalancing: 1543e43c378273d5e9020c19a17ce3bb97d1c91b
+  AWSIoT: 74deffdf95719407d2e40770c56e55f7150b8f60
+  AWSKinesis: cf19661168e8ec68fb2efa960bd56909d373abfd
+  AWSLambda: d6d656a1188819892e5b1d8128890137f16f8429
+  AWSMachineLearning: da0f51cd9e41d787f43efb1950cda87483cc1add
+  AWSMobileAnalytics: cb5cee3e481abb0aabf0d26d2067e658195142c8
+  AWSS3: 2b70463225a455ba26494f06346bddb74dedf73d
+  AWSSES: 65fcd9be7724f4a19348441be2f03e647466db62
+  AWSSimpleDB: 1894a218847a038c56b9a16d161198e6dae291bd
+  AWSSNS: c78beb9fa64abd0bb745974b47b63202030daa66
+  AWSSQS: 0fc2d301d95ba319b34a564b2b1bc1f7c58a4bcb
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Braintree: 41b53612276bf3308d2299bec2b4c96594327662
+  BraintreeDropIn: 4e80bce4bc2b430f2fb1af0cd13ff3223d2758d3
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  Facebook-iOS-SDK: 9e49124fcfe437bde91621cfcb2a7bb187063dcc
+  GJPG: 8249562446bb338b99fed4f0ea1fcdb2879299e0
+  HPGrowingTextView: 88a716d97fb853bcb08a4a08e4727da17efc9b19
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+  LLSimpleCamera: 7175ccb81be71c83d79933089322eb662b1f0327
+  PushSpring: dfd5028ae4c64461e326a69d92ae908d008cfa7e
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SlideMenuControllerOC: e5b1cdc1ff4e1c0eca58c0a64967ab25d95bf85f
+
+PODFILE CHECKSUM: f35c6a5a48960cdcc2cc8141213507446d58e580
+
+COCOAPODS: 1.5.3

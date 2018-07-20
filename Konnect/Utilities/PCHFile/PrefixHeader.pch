@@ -1,0 +1,29 @@
+//
+//  PrefixHeader.pch
+//  Konnect
+//
+//  Created by Balraj Randhawa on 18/09/17.
+//  Copyright © 2017 Balraj Randhawa. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Constant.h"
+#import "Singlton.h"
+#import "SlideMenuController.h"
+#import "HCSStarRatingView.h"
+#import "UIViewController+LGSideMenuController.h"
+#import "BaseVC.h"
+#import <AWSS3/AWSS3.h>
+#import <AWSDynamoDB/AWSDynamoDB.h>
+#import "AsyncImageView.h"
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568.0 ) < DBL_EPSILON )
+#define IS_IPHONE_6 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )667.0 ) < DBL_EPSILON )
+#define IS_IPHONE_6_PLUS ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )736.0 ) < DBL_EPSILON )
+#define SYSTEM_VERSION_GREATER_THAN(v)   ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

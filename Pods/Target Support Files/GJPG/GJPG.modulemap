@@ -1,0 +1,6 @@
+framework module GJPG {
+  umbrella header "GJPG-umbrella.h"
+
+  export *
+  module * { export * }
+}

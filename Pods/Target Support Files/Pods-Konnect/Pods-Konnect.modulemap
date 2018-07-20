@@ -1,0 +1,6 @@
+framework module Pods_Konnect {
+  umbrella header "Pods-Konnect-umbrella.h"
+
+  export *
+  module * { export * }
+}
