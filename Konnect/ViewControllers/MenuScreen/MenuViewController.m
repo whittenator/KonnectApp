@@ -32,7 +32,7 @@
                                              selector:@selector(UpdatePicNUserName:)name:@"UpdateValues"
                                                object:nil];
     _tblMenuItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    menuItems = @[@"Home", @"Notification", @"Settings",@"Friends", @"FAQ", @"PrivacyPolicy", @"Logout"];
+    menuItems = @[@"Home", @"Notification", @"Settings", @"FAQ", @"PrivacyPolicy", @"Logout"];
     if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
@@ -254,16 +254,18 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
+    /*
     else if(indexPath.row == 3)
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
-        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsViewController"];
+        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SwiftProfileVC"];
         UINavigationController *navigationController = (UINavigationController *)mainViewController.rootViewController;
         [navigationController pushViewController:viewController animated:YES];
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
-    else if(indexPath.row == 4)
+    */
+    else if(indexPath.row == 3)
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FAQViewController"];
@@ -272,7 +274,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
-    else if(indexPath.row == 5)//FAQViewController.h
+    else if(indexPath.row == 4)//FAQViewController.h
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyNPolicyViewController"];

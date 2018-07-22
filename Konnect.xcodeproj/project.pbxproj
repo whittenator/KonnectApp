@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		046951E5208F26BE009C46E4 /* RefreshUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 046951E4208F26BE009C46E4 /* RefreshUserData.m */; };
 		4E06676A366591A3E2E72CCE /* Pods_Konnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4A1D0FB1FF099166D63591 /* Pods_Konnect.framework */; };
+		56D941852102BD0A00D53E8C /* SwiftProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D941842102BD0A00D53E8C /* SwiftProfileVC.swift */; };
 		9875B1324E614C052089539E /* Pods_KonnectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0008259B75FF374580730859 /* Pods_KonnectTests.framework */; };
 		A471AEC6CAD4927D4176D6F2 /* Pods_KonnectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C4F020753A2988619E0092 /* Pods_KonnectUITests.framework */; };
 		B10488E01F9501DA008E3F8F /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B10488DF1F9501DA008E3F8F /* Consumer.storyboard */; };
@@ -193,6 +194,8 @@
 		1A4A1D0FB1FF099166D63591 /* Pods_Konnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D348506582F4E1BCC91FE2 /* Pods-Konnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Konnect/Pods-Konnect.release.xcconfig"; sourceTree = "<group>"; };
 		56D94181210243AB00D53E8C /* LastDropLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LastDropLocation.gpx; sourceTree = "<group>"; };
+		56D941842102BD0A00D53E8C /* SwiftProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProfileVC.swift; sourceTree = "<group>"; };
+		56D941862102C04C00D53E8C /* Konnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konnect-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B3E400FF79E525A5E903FF3 /* Pods-KonnectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonnectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KonnectUITests/Pods-KonnectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80696398C47A57699A37B1BD /* Pods-KonnectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonnectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KonnectTests/Pods-KonnectTests.release.xcconfig"; sourceTree = "<group>"; };
 		89C4F020753A2988619E0092 /* Pods_KonnectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KonnectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1333,6 +1336,7 @@
 				B140CE13200928D700CB5ECA /* ProfileScreenViewController.h */,
 				B140CE12200928D600CB5ECA /* ProfileScreenViewController.m */,
 				E33776311F878042001C0370 /* ProfileCell */,
+				56D941842102BD0A00D53E8C /* SwiftProfileVC.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -1762,6 +1766,7 @@
 				E3C3AE531F69118C0073722F /* Info.plist */,
 				E3C3AE541F69118C0073722F /* main.m */,
 				56D94181210243AB00D53E8C /* LastDropLocation.gpx */,
+				56D941862102C04C00D53E8C /* Konnect-Bridging-Header.h */,
 			);
 			path = Konnect;
 			sourceTree = "<group>";
@@ -2394,6 +2399,7 @@
 				E3569B011FE1196700950CFD /* VenueEventCollectionViewCell.m in Sources */,
 				E3AF5B4A1F6944AD009C7471 /* BaseVC.m in Sources */,
 				B1112C30200F949C00616551 /* FriendsCell.m in Sources */,
+				56D941852102BD0A00D53E8C /* SwiftProfileVC.swift in Sources */,
 				B1112C2B200F944100616551 /* FriendsListScreenVC.m in Sources */,
 				B7E18F8E203C2D6900AA91FB /* SubscriptionPlanViewController.m in Sources */,
 				E3F7FE471F949DA40034A98F /* TransectionTableViewCell.m in Sources */,
@@ -2595,7 +2601,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/traviswhitten/Desktop/Konnect/Konnect/Utilities/PCHFile/PrefixHeader.pch;
 				INFOPLIST_FILE = Konnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2605,7 +2611,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Konnect/ViewControllers/Consumer 2/SwiftConsumerVenueEventDetail/Konnect-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/traviswhitten/Desktop/Konnect/Konnect/Konnect-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2628,7 +2634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/traviswhitten/Desktop/Konnect/Konnect/Utilities/PCHFile/PrefixHeader.pch;
 				INFOPLIST_FILE = Konnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2638,7 +2644,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Konnect/ViewControllers/Consumer 2/SwiftConsumerVenueEventDetail/Konnect-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/traviswhitten/Desktop/Konnect/Konnect/Konnect-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}";
@@ -2649,6 +2655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BDE0FA00AF28E098F4D3AA3 /* Pods-KonnectTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KonnectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2663,6 +2670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80696398C47A57699A37B1BD /* Pods-KonnectTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KonnectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2677,6 +2685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B3E400FF79E525A5E903FF3 /* Pods-KonnectUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = KonnectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bitcot.KonnectUITests;
@@ -2690,6 +2699,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA2508AC7A3381D5F5480A2E /* Pods-KonnectUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = KonnectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bitcot.KonnectUITests;

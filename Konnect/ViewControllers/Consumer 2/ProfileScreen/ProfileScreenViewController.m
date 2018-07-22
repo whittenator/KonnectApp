@@ -42,9 +42,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _tblProfile.estimatedRowHeight = 80;
-    _tblProfile.rowHeight = UITableViewAutomaticDimension;
-    _tblProfile.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //_tblProfile.estimatedRowHeight = 80;
+    //_tblProfile.rowHeight = UITableViewAutomaticDimension;
+    //_tblProfile.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     // Do any additional setup after loading the view.
 }
 
@@ -63,15 +63,27 @@
     if(!([[_dictUserProfile valueForKey:@"UserId"]isEqualToString:[dictSelfProfile valueForKey:@"UserId"]]))
     {
         isSelfProfile = NO;
+        _messageBtn.hidden = false;
+        _addBtn.hidden = false;
+        _editProfileBtn.hidden = true;
+        _editProfileBtn.enabled = false;
+        _settingsBtn.hidden = true;
+        _settingsBtn.enabled = false;
         NSLog(@"dict Info is %@",_dictUserProfile);
         [self CallOtherUserProfile];
     }
     else
     {
         isSelfProfile = YES;
+        _messageBtn.hidden = true;
+        _addBtn.hidden = true;
+        _editProfileBtn.hidden = false;
+        _editProfileBtn.enabled = true;
+        _settingsBtn.hidden = false;
+        _settingsBtn.enabled = true;
        
         [self CallSelfUserProfile];
-        [self FetchEventPost:[dictSelfProfile valueForKey:@"UserId"]];
+        //[self FetchEventPost:[dictSelfProfile valueForKey:@"UserId"]];
     }
     //arrTableData =[NSMutableArray arrayWithObjects:@"UserPostImageCell", nil];
 }
@@ -145,7 +157,7 @@
                          arrNonSelfFollower = [[_dictUserProfile valueForKey:@"Followers"]allObjects].mutableCopy;
                          self.view.userInteractionEnabled = YES;
                         [self UpdateUserProfileImageAndLabelData];
-                        [self FetchEventPost:[_dictUserProfile valueForKey:@"UserId"]];
+                       // [self FetchEventPost:[_dictUserProfile valueForKey:@"UserId"]];
                         
                      }
                      else
@@ -223,7 +235,7 @@
     else
     {
         [_imgUserImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
-         [_imgUserBackground sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
+         //[_imgUserBackground sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
     }
     [self UpdateUserProfileImageAndLabelData];
 }
@@ -263,19 +275,19 @@
         {
             _lblFollowing.text = @"0";
         }
-        _imgEditProfile.hidden = NO;
+        //_imgEditProfile.hidden = NO;
         if([[NSUserDefaults standardUserDefaults] objectForKey:@"localUserImage"]!=nil)
         {
             _imgUserImage.image = imgUserLocal;
-            _imgUserBackground.image = imgUserLocal;
+            //_imgUserBackground.image = imgUserLocal;
         }
         else
         {
             [_imgUserImage sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
-             [_imgUserBackground sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
+             //[_imgUserBackground sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
         }
           [[Singlton sharedManager]imageProfileRounded:_imgUserImage withFlot:_imgUserImage.frame.size.width/2 withCheckLayer:NO];
-        [_btnEditProfile addTarget:self action:@selector(funcGotoEditScreen) forControlEvents:UIControlEventTouchUpInside];
+        [_editProfileBtn addTarget:self action:@selector(funcGotoEditScreen) forControlEvents:UIControlEventTouchUpInside];
         
         
         if([[dictSelfProfile valueForKey:@"firstName"]isEqualToString:@"NA"]||[[dictSelfProfile valueForKey:@"lastName"]isEqualToString:@"NA"])
@@ -288,27 +300,27 @@
         }
         if(![[dictSelfProfile valueForKey:@"HomeLocation"]isEqualToString:@"NA"])
         {
-            _viewLocation.hidden = NO;
-            _lblLocation.text = [dictSelfProfile valueForKey:@"HomeLocation"];
+            //_viewLocation.hidden = NO;
+            //_lblLocation.text = [dictSelfProfile valueForKey:@"HomeLocation"];
 
         }
         else
         {
-             _viewLocation.hidden = YES;
-            _lblLocation.text = @"Dunkirk, New York";
+             //_viewLocation.hidden = YES;
+            //_lblLocation.text = @"Dunkirk, New York";
         }
         if([Singlton sharedManager].strComingFromVenueOwnerCommentScreen!=nil)
         {
             _btnBack.hidden = NO;
-            _btnHameBurgerIcon.hidden = YES;
-            _btnEditProfile.hidden = YES;
-            _imgEditProfile.hidden = YES;
+            //_btnHameBurgerIcon.hidden = YES;
+            //_btnEditProfile.hidden = YES;
+            //_imgEditProfile.hidden = YES;
         }
         else
         {
-            _btnBack.hidden = YES;
-            _btnHameBurgerIcon.hidden = NO;
-             _btnEditProfile.hidden = NO;
+            //_btnBack.hidden = YES;
+            //_btnHameBurgerIcon.hidden = NO;
+             //_btnEditProfile.hidden = NO;
         }
     }
     else
@@ -347,21 +359,21 @@
         NSString *strForEventImageName = [[_dictUserProfile valueForKey:@"Email"]stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
         imageUrl = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@.jpg",BASE_CONSUMER_IMAGE_URL,strForEventImageName]];
         [_imgUserImage sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
-         [_imgUserBackground sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
+         //[_imgUserBackground sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imgEditProfileDefaultUser"]options:SDWebImageRefreshCached];
          [[Singlton sharedManager]imageProfileRounded:_imgUserImage withFlot:_imgUserImage.frame.size.width/2 withCheckLayer:NO];
         if([Singlton sharedManager].strComingFromVenueOwnerCommentScreen!=nil)
         {
             _btnBack.hidden = NO;
-            _btnHameBurgerIcon.hidden = YES;
-            _btnEditProfile.hidden = YES;
-            _imgEditProfile.hidden = YES;
+            //_btnHameBurgerIcon.hidden = YES;
+            //_btnEditProfile.hidden = YES;
+            //_imgEditProfile.hidden = YES;
         }
         else
         {
-            _btnBack.hidden = YES;
-            _btnHameBurgerIcon.hidden = NO;
-            _btnEditProfile.hidden = NO;
-             _imgEditProfile.hidden = YES;
+            //_btnBack.hidden = YES;
+            //_btnHameBurgerIcon.hidden = NO;
+            //_btnEditProfile.hidden = NO;
+             //_imgEditProfile.hidden = YES;
         }
        
     [_btnBack addTarget:self action:@selector(actionBack:) forControlEvents:UIControlEventTouchUpInside];
@@ -375,31 +387,35 @@
         }
         if(![[_dictUserProfile valueForKey:@"HomeLocation"]isEqualToString:@"NA"])
         {
-            _viewLocation.hidden = NO;
-            _lblLocation.text = [dictSelfProfile valueForKey:@"HomeLocation"];
+            //_viewLocation.hidden = NO;
+            //_lblLocation.text = [dictSelfProfile valueForKey:@"HomeLocation"];
             
         }
         else
         {
-              _viewLocation.hidden = YES;
-            _lblLocation.text = @"Dunkirk, New York";
+              //_viewLocation.hidden = YES;
+            //_lblLocation.text = @"Dunkirk, New York";
         }
         
         if(isAlreadyFollowing == YES)
         {
-             _tblProfile.hidden = NO;
-            [_btnEditProfile addTarget:self action:@selector(funcFollowUnFollowUser)
+             //_tblProfile.hidden = NO;
+           // [_btnEditProfile addTarget:self action:@selector(funcFollowUnFollowUser)
+                      //forControlEvents:UIControlEventTouchUpInside];
+            [_addBtn addTarget:self action:@selector(funcFollowUnFollowUser)
                       forControlEvents:UIControlEventTouchUpInside];
-            _btnEditProfile.userInteractionEnabled = YES;
-              [_btnEditProfile setTitle:@"Following" forState:UIControlStateNormal];
+            _addBtn.userInteractionEnabled = YES;
+            [_addBtn setImage:[UIImage imageNamed:@"UnfollowUserBtn"] forState:UIControlStateNormal];
+              //[_btnEditProfile setTitle:@"Following" forState:UIControlStateNormal];
         }
         else
         {
-             _tblProfile.hidden = YES;
-            [_btnEditProfile addTarget:self action:@selector(funcFollowUnFollowUser)
+             //_tblProfile.hidden = YES;
+            [_addBtn addTarget:self action:@selector(funcFollowUnFollowUser)
                       forControlEvents:UIControlEventTouchUpInside];
-             [_btnEditProfile setTitle:@"Follow" forState:UIControlStateNormal];
-            _btnEditProfile.userInteractionEnabled = YES;
+             //[_btnEditProfile setTitle:@"Follow" forState:UIControlStateNormal];
+            [_addBtn setImage:[UIImage imageNamed:@"FollowUserBtn"] forState:UIControlStateNormal];
+            _addBtn.userInteractionEnabled = YES;
            
         }
        
@@ -417,16 +433,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return arrEventPost.count;
+    return 1;
+    //return arrEventPost.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
    NSString *quantityCellIdentifier = @"UserPostImageCell";
          ProfilePostImageCell *cell = (ProfilePostImageCell *)[tableView dequeueReusableCellWithIdentifier:quantityCellIdentifier forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    /*
     
         cell.btnComment.tag = indexPath.row;
         [cell.btnComment addTarget:self
@@ -477,7 +495,7 @@
     [cell.btnPlay addTarget:self
                      action:@selector(clickPlayVideo:)
            forControlEvents:UIControlEventTouchUpInside];
-        
+      */
       return cell;
     
 }
@@ -717,7 +735,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
                      [arrNotifications addObject:chat.dictionaryValue];
                      
                  }//NotificationTo
-                 [self callRemoveNotiFromTableforParticularUser:[dictSelfProfile valueForKey:@"UserId"] AndNonLoginUserId:[_dictUserProfile valueForKey:@"UserId"] AndNotiArray:arrNotifications];
+                 //[self callRemoveNotiFromTableforParticularUser:[dictSelfProfile valueForKey:@"UserId"] AndNonLoginUserId:[_dictUserProfile valueForKey:@"UserId"] AndNotiArray:arrNotifications];
              });
              
          }
@@ -726,7 +744,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
          
      }];
 }
-
+/*
 -(void)callRemoveNotiFromTableforParticularUser:(NSString *)strLoginUserId AndNonLoginUserId:(NSString *)strNonLoginId AndNotiArray:(NSMutableArray *)arrNotifications
 {
     NSString *strNotiId;
@@ -767,7 +785,8 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
     }
     
 }
-
+*/
+/*
 -(void)CallRemoveNotificationFromTable:(NSString *)strNotiId AndIndex:(int)index AndNotiArray:(NSMutableArray *)arrNotifications
 {
     KN_Notification *notiDetail = [KN_Notification new];
@@ -799,6 +818,8 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
          return nil;
      }];
 }
+ */
+
 -(void) CallFollowUserNUpdateSelfFollowingArray
 {
     self.view.userInteractionEnabled = NO;
@@ -911,7 +932,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
 }
 
 #pragma mark - Costom Methods
-
+/*
 -(void)clickPlayVideo:(UIButton *) sender
 {
     
@@ -934,6 +955,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+ */
 -(void)funcGotoEditScreen
 {
     EditProfileViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
@@ -969,7 +991,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 -(void)FetchEventPost:(NSString *)strUserId
 {
     if([[Singlton sharedManager] CheckInterConnectivity] == NO)
@@ -1020,20 +1042,20 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
                  
                  if (arrEventPost.count>0) {
                      
-                     lblAlert.hidden = YES;
-                     _tblProfile.hidden = NO;
+                     //lblAlert.hidden = YES;
+                     //_tblProfile.hidden = NO;
                      NSSortDescriptor *sortDescriptor =
                      [[NSSortDescriptor alloc] initWithKey:@"CreatedAt"
                                                  ascending:YES];
                      NSArray *arrayMesage = [arrEventPost
                                              sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
                      arrEventPost = [NSMutableArray arrayWithArray:arrayMesage];
-                     [_tblProfile reloadData];
+                     //[_tblProfile reloadData];
                  }
                  else
                  {
-                     lblAlert.hidden = NO;
-                     _tblProfile.hidden = YES;
+                     //lblAlert.hidden = NO;
+                     //_tblProfile.hidden = YES;
                     
                      
                  }
@@ -1049,9 +1071,40 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
      }];
     
 }
-
+*/
 -(IBAction)GettMultipleUserDataUsingBatch:(UIButton *)sender
 {
+    if(sender.tag ==1) {
+        //_lblFollowing.textColor = [UIColor blueColor];
+        //_lblFollowing.highlighted = true;
+        //_lblFollowing.highlightedTextColor = [UIColor blueColor];
+        _followingsTextLbl.highlighted = true;
+        _followingsTextLbl.highlightedTextColor = [UIColor blueColor];
+        
+        if(isSelfProfile == YES){
+             _lblFollowing.highlighted = false;
+            [self GetDataForMultipleIds:arrSelfFollowing AndTitle:@"Followings"];
+            
+        }else {
+             _lblFollowing.highlighted = false;
+            [self GetDataForMultipleIds:arrNonSelfFollowing AndTitle:@"Followings"];
+            }
+    } else {
+        if(sender.tag == 0) {
+            //_lblFollowers.textColor = [UIColor blueColor];
+            if(isSelfProfile == YES) {
+                _followingsTextLbl.highlighted = false;
+                [self GetDataForMultipleIds:arrSelfFollower AndTitle:@"Followers"];
+            } else {
+                _followingsTextLbl.highlighted = false;
+                [self GetDataForMultipleIds:arrNonSelfFollower AndTitle:@"Followers"];
+            }
+        }
+        
+        
+    }
+    _followingsTextLbl.highlighted = false;
+    /*
     if(isSelfProfile == YES)
     {
         if(sender.tag == 0)
@@ -1077,6 +1130,7 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
         }
         
     }
+     */
 }
 
 -(void)GetDataForMultipleIds:(NSMutableArray *)arrayOfId AndTitle:(NSString *)strTitle

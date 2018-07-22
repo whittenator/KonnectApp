@@ -35,7 +35,6 @@
 -(NSDate *)convertStringToDate:(NSString *)strEventDate;
 -(NSString *)convertDateToString:(NSDate *)strEventDate;
 -(NSNumber *)ConvertDateToTimeStamWithDate:(NSDate *)Date;
--(NSString *)convertDateToString:(NSDate *)strEventDate;
 -(BOOL)DateChekDifference:(NSDate *)beginedate andDate:(NSDate*)endDate;
 -(BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate;
 -(void) SettingANSForPushNotification:(NSString *)strUserId AndEmailId:(NSString *)strEmail;
