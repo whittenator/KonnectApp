@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstName;
 @property (weak, nonatomic) IBOutlet UITextField *txtLastName;
 @property (weak, nonatomic) IBOutlet UITextField *txtHomeLoc;
+@property (weak, nonatomic) IBOutlet UITextField *txtBio;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imgUserPic;
 @property (weak, nonatomic) IBOutlet UIButton *btnUserPic;
 @property (nonatomic,strong) CLLocationManager *locationManager;

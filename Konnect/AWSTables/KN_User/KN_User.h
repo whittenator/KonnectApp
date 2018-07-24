@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSString *Longitude;
 @property (nonatomic, strong) NSString *Firstname;
 @property (nonatomic, strong) NSString *Lastname;
+@property (nonatomic, strong) NSString *Bio;
 @property (nonatomic, strong) NSString *PhoneNumber;
 @property (nonatomic, strong) NSString *UserImage;
 @property (nonatomic, strong) NSString *FBProfilePicChanged;

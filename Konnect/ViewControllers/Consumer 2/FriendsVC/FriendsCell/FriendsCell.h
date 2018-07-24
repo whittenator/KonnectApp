@@ -11,4 +11,5 @@
 @interface FriendsCell : UITableViewCell
 @property(weak,nonatomic)IBOutlet UIImageView *imgUser;
 @property(weak,nonatomic)IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UIButton *btnGoToProfile;
 @end

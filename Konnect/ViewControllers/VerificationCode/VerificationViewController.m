@@ -150,7 +150,7 @@
                      {
                          [[Singlton sharedManager]killHUD];
                          self.view.userInteractionEnabled = YES;
-                         [[Singlton sharedManager] alert:self title:Alert message:@"This verification code is used for other Venue Owner."];
+                         [[Singlton sharedManager] alert:self title:Alert message:@"This verification code is used for another Venue Owner."];
                      }
                      else{
                          [[Singlton sharedManager]killHUD];

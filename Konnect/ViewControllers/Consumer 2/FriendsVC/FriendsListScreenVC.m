@@ -8,8 +8,9 @@
 
 #import "FriendsListScreenVC.h"
 #import <AWSS3/AWSS3.h>
+#import "FriendsCell/FriendsCell.h"
 #import "KN_User.h"
-#import "FriendsCell.h"
+//#import "FriendsCell.h"
 #import "UIImageView+WebCache.h"
 #import "ProfileScreenViewController.h"
 @interface FriendsListScreenVC ()
@@ -94,6 +95,10 @@ NSMutableDictionary *dictionaryAttributes = [[NSMutableDictionary alloc] init];
     NSString *quantityCellIdentifier = @"Cell";
     FriendsCell *cell = (FriendsCell *)[tableView dequeueReusableCellWithIdentifier:quantityCellIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.btnGoToProfile.tag = indexPath.row;
+    
+    [cell.btnGoToProfile addTarget:self action:@selector(goToProfile:) forControlEvents:UIControlEventTouchUpInside];
+    
     cell.lblName.text = [NSString stringWithFormat:@"%@ %@",[[_arrayFriends objectAtIndex:indexPath.row]valueForKey:@"Firstname"],[[_arrayFriends objectAtIndex:indexPath.row]valueForKey:@"Lastname"]];
     NSString *strForEventImageName = [[[_arrayFriends valueForKey:@"UserImage"]objectAtIndex:indexPath.row] stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
     
@@ -112,6 +117,14 @@ NSMutableDictionary *dictionaryAttributes = [[NSMutableDictionary alloc] init];
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goToProfile:(UIButton *)sender
+{
+    
+    ProfileScreenViewController *ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileScreenViewController"];
+    [Singlton sharedManager].dictNonLoginUser = [_arrayFriends objectAtIndex:sender.tag];
+    [self.navigationController pushViewController:ivc animated:YES];
 }
 
 /*

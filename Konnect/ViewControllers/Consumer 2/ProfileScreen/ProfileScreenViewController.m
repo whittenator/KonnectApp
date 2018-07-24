@@ -19,6 +19,8 @@
 #import "KN_Staging_PostEvent.h"
 #import "NSDate+NVTimeAgo.h"
 #import "FriendsListScreenVC.h"
+#import "MainViewController.h"
+#import "ConsumerSettingsViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 #import "VenueOwnerCommentViewController.h"
@@ -298,16 +300,16 @@
         {
             _lblUserName.text = [NSString stringWithFormat:@"%@ %@",[dictSelfProfile valueForKey:@"firstName"],[dictSelfProfile valueForKey:@"lastName"]].uppercaseString;
         }
-        if(![[dictSelfProfile valueForKey:@"HomeLocation"]isEqualToString:@"NA"])
+        if(![[dictSelfProfile valueForKey:@"Bio"]isEqualToString:@"NA"])
         {
-            //_viewLocation.hidden = NO;
-            //_lblLocation.text = [dictSelfProfile valueForKey:@"HomeLocation"];
+            _bioLbl.hidden = NO;
+            _bioLbl.text = [dictSelfProfile valueForKey:@"Bio"];
 
         }
         else
         {
-             //_viewLocation.hidden = YES;
-            //_lblLocation.text = @"Dunkirk, New York";
+             _bioLbl.hidden = YES;
+            _bioLbl.text = @"Good,better,best.Never let it rest.'Til your good is better and your better is best.";
         }
         if([Singlton sharedManager].strComingFromVenueOwnerCommentScreen!=nil)
         {
@@ -987,6 +989,8 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
     }
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -1132,6 +1136,12 @@ AWSLambdaInvoker *lambdaInvoker = [AWSLambdaInvoker defaultLambdaInvoker];
     }
      */
 }
+
+- (IBAction)goToSettings:(id)sender {
+    
+    ConsumerSettingsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ConsumerSettingsViewController"];
+    [self.navigationController pushViewController:vc animated:YES];}
+
 
 -(void)GetDataForMultipleIds:(NSMutableArray *)arrayOfId AndTitle:(NSString *)strTitle
 {

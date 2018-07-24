@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileBtn;
 @property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
+@property (weak, nonatomic) IBOutlet UILabel *bioLbl;
 
 //@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
 //@property (weak, nonatomic) IBOutlet UIImageView *imgLocation;

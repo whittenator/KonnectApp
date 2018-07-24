@@ -46,6 +46,11 @@
    
     _txtHomeLoc.leftView = confirmPassword;
     _txtHomeLoc.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIView *paddingViewBio = [[UIView alloc] initWithFrame:CGRectMake(0,0,15,20)];
+    _txtBio.leftView = paddingViewBio;
+    _txtBio.leftViewMode = UITextFieldViewModeAlways;
+    
     _imgUserPic.image = nil;
     if(![[dictUserInfo valueForKey:@"UserImage"]isEqualToString:@"NA"])
     {
@@ -118,6 +123,16 @@
     {
         
         _txtHomeLoc.text = [dictUserInfo valueForKey:@"HomeLocation"];
+    }
+    if([[dictUserInfo valueForKey:@"Bio"]isEqualToString:@"NA"])
+    {
+        printf("TRAVIS: NO BIO IS IN THERE");
+        _txtBio.text = @"";
+    }
+    else
+    {
+        
+        _txtBio.text = [dictUserInfo valueForKey:@"Bio"];
     }
     [[Singlton sharedManager]imageProfileRounded:_imgUserPic withFlot:_imgUserPic.frame.size.width/2 withCheckLayer:NO];
     self.locationManager = [[CLLocationManager alloc] init];
@@ -317,6 +332,10 @@
     {
         [[Singlton sharedManager] alert:self title:Alert message:HomeLoc];
     }
+    else if ([[Singlton sharedManager]check_null_data:_txtBio.text])
+    {
+        [[Singlton sharedManager] alert:self title:Alert message:HomeLoc];
+    }
     else
     {
        
@@ -478,9 +497,16 @@
     AWSDynamoDBAttributeValueUpdate *valueUpdate8 = [AWSDynamoDBAttributeValueUpdate new];
     valueUpdate8.value = newPrice8;
     valueUpdate8.action = AWSDynamoDBAttributeActionPut;
+    
+    //Bio
+    AWSDynamoDBAttributeValue *newPrice9 = [AWSDynamoDBAttributeValue new];
+    newPrice9.S = _txtBio.text;
+    AWSDynamoDBAttributeValueUpdate *valueUpdate9 = [AWSDynamoDBAttributeValueUpdate new];
+    valueUpdate9.value = newPrice9;
+    valueUpdate9.action = AWSDynamoDBAttributeActionPut;
  
     
-    updateInput.attributeUpdates = @{@"Firstname": valueUpdate,@"Lastname":valueUpdate2,@"Latitude":valueUpdate3,@"Longitude":valueUpdate4,@"UpdatedAt":valueUpdate5,@"UserImage":valueUpdate6,@"HomeLocation":valueUpdate7,@"FBProfilePicChanged":valueUpdate8};
+    updateInput.attributeUpdates = @{@"Firstname": valueUpdate,@"Lastname":valueUpdate2,@"Latitude":valueUpdate3,@"Longitude":valueUpdate4,@"UpdatedAt":valueUpdate5,@"UserImage":valueUpdate6,@"HomeLocation":valueUpdate7,@"FBProfilePicChanged":valueUpdate8,@"Bio":valueUpdate9};
 
     updateInput.returnValues = AWSDynamoDBReturnValueUpdatedNew;
     
@@ -503,6 +529,7 @@
                 [dictUserInfo setObject:strImageName forKey:@"UserImage"];
                 [dictUserInfo setObject:_txtLastName.text forKey:@"lastName"];
                 [dictUserInfo setObject:_txtHomeLoc.text forKey:@"HomeLocation"];
+                [dictUserInfo setObject:_txtBio.text forKey:@"Bio"];
                 [[NSUserDefaults standardUserDefaults]setObject:dictUserInfo forKey:@"loginUser"];
                 [[NSUserDefaults standardUserDefaults]setObject:UIImagePNGRepresentation(_imgUserPic.image) forKey:@"localUserImage"];
                 // Calling NSNotificationCenter for updating the data in sidemenuBar
