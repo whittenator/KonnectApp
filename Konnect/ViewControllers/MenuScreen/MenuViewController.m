@@ -32,7 +32,7 @@
                                              selector:@selector(UpdatePicNUserName:)name:@"UpdateValues"
                                                object:nil];
     _tblMenuItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    menuItems = @[@"Home", @"Notification", @"Settings", @"FAQ", @"PrivacyPolicy", @"Logout"];
+    menuItems = @[@"Home",@"FriendsSearch", @"Notification", @"Settings", @"FAQ", @"PrivacyPolicy", @"Logout"];
     if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
@@ -236,7 +236,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
-   else if(indexPath.row == 1)
+    else if(indexPath.row == 1)
+    {
+        MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
+        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsSearchVC"];
+        UINavigationController *navigationController = (UINavigationController *)mainViewController.rootViewController;
+        [navigationController pushViewController:viewController animated:YES];
+        [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
+        
+    }
+   else if(indexPath.row == 2)
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConsumerNotificationViewController"];
@@ -245,7 +254,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
-    else if(indexPath.row == 2)
+    else if(indexPath.row == 3)
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConsumerSettingsViewController"];
@@ -265,7 +274,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         
     }
     */
-    else if(indexPath.row == 3)
+    else if(indexPath.row == 4)
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FAQViewController"];
@@ -274,7 +283,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
         [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         
     }
-    else if(indexPath.row == 4)//FAQViewController.h
+    else if(indexPath.row == 5)//FAQViewController.h
     {
         MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
         UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyNPolicyViewController"];

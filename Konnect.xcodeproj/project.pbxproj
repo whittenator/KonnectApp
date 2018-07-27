@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		046951E5208F26BE009C46E4 /* RefreshUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 046951E4208F26BE009C46E4 /* RefreshUserData.m */; };
 		4E06676A366591A3E2E72CCE /* Pods_Konnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4A1D0FB1FF099166D63591 /* Pods_Konnect.framework */; };
+		560F2E1D210B9F6D00987D9A /* FriendsSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2E19210B9F6D00987D9A /* FriendsSearchTableViewCell.m */; };
+		560F2E1E210B9F6D00987D9A /* FriendsSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2E1C210B9F6D00987D9A /* FriendsSearchVC.m */; };
 		56D941852102BD0A00D53E8C /* SwiftProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D941842102BD0A00D53E8C /* SwiftProfileVC.swift */; };
 		9875B1324E614C052089539E /* Pods_KonnectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0008259B75FF374580730859 /* Pods_KonnectTests.framework */; };
 		A471AEC6CAD4927D4176D6F2 /* Pods_KonnectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C4F020753A2988619E0092 /* Pods_KonnectUITests.framework */; };
@@ -193,6 +195,10 @@
 		046951E4208F26BE009C46E4 /* RefreshUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshUserData.m; sourceTree = "<group>"; };
 		1A4A1D0FB1FF099166D63591 /* Pods_Konnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D348506582F4E1BCC91FE2 /* Pods-Konnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Konnect/Pods-Konnect.release.xcconfig"; sourceTree = "<group>"; };
+		560F2E19210B9F6D00987D9A /* FriendsSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsSearchTableViewCell.m; sourceTree = "<group>"; };
+		560F2E1A210B9F6D00987D9A /* FriendsSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsSearchVC.h; sourceTree = "<group>"; };
+		560F2E1B210B9F6D00987D9A /* FriendsSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsSearchTableViewCell.h; sourceTree = "<group>"; };
+		560F2E1C210B9F6D00987D9A /* FriendsSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsSearchVC.m; sourceTree = "<group>"; };
 		56D94181210243AB00D53E8C /* LastDropLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LastDropLocation.gpx; sourceTree = "<group>"; };
 		56D941842102BD0A00D53E8C /* SwiftProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProfileVC.swift; sourceTree = "<group>"; };
 		56D941862102C04C00D53E8C /* Konnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konnect-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -556,6 +562,17 @@
 				046951E4208F26BE009C46E4 /* RefreshUserData.m */,
 			);
 			path = RefreshUserDataVC;
+			sourceTree = "<group>";
+		};
+		560F2E18210B9F6D00987D9A /* FriendsSearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				560F2E19210B9F6D00987D9A /* FriendsSearchTableViewCell.m */,
+				560F2E1A210B9F6D00987D9A /* FriendsSearchVC.h */,
+				560F2E1B210B9F6D00987D9A /* FriendsSearchTableViewCell.h */,
+				560F2E1C210B9F6D00987D9A /* FriendsSearchVC.m */,
+			);
+			path = FriendsSearchVC;
 			sourceTree = "<group>";
 		};
 		56D9417D2102227A00D53E8C /* SwiftConsumer */ = {
@@ -1212,6 +1229,7 @@
 		E33776141F878042001C0370 /* Consumer 2 */ = {
 			isa = PBXGroup;
 			children = (
+				560F2E18210B9F6D00987D9A /* FriendsSearchVC */,
 				56D9417D2102227A00D53E8C /* SwiftConsumer */,
 				B1112C28200F941A00616551 /* FriendsVC */,
 				B140CE1C20092EF100CB5ECA /* VenueImageDetails */,
@@ -2313,6 +2331,8 @@
 				E3B72BF71F8B791C00FD3176 /* ClaimYourBusinessViewController.m in Sources */,
 				B10489361F95307D008E3F8F /* ConsumerGalleryCell.m in Sources */,
 				B182AF551F955305001DB461 /* ConsumerGallerySelectedCell.m in Sources */,
+				560F2E1E210B9F6D00987D9A /* FriendsSearchVC.m in Sources */,
+				560F2E1D210B9F6D00987D9A /* FriendsSearchTableViewCell.m in Sources */,
 				B148B7091FC58E45008F4C74 /* EventTableViewCell.m in Sources */,
 				E31442F51FCDBDCB005898F2 /* SliderCollectionViewCell.m in Sources */,
 				E3B72BF61F8B78CF00FD3176 /* CommentTableViewCell.m in Sources */,
